@@ -61,14 +61,14 @@ overflow-y
 display
 visibility
 
-Margins
+Margins:
 margin
 margin-top
 margin-right
 margin-bottom
 margin-left
 
-Outlines
+Outlines:
 outline
 outline-color
 outline-style
@@ -192,12 +192,12 @@ text-overflow
 word-wrap
 white-space
 
-User-interface
+User-interface:
 box-sizing
 resize
 outline
 
-Generated Content
+Generated Content:
 content
 
 
