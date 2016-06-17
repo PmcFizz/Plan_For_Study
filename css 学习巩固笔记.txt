@@ -20,3 +20,63 @@ wait  :　  用于标示程序忙用户需要等待的光标。通常是沙漏�
 url ( url )  :　 IE6.0  用户自定义光标。使用绝对或相对 url 地址指定光标文件(后缀为 .cur 或者 .ani )。 
 
 }
+
+
+filter{
+	
+}
+
+选择符
+伪类
+
+
+
+
+
+
+
+
+CSS3 Properties
+
+Border:
+border-color
+border-image
+border-radius
+
+Background:
+background-origin
+background-clip
+background-size
+
+
+Color:
+HSL colors
+HSLA colors
+opacity
+
+Text effects:
+text-shadow
+text-overflow
+word-wrap
+white-space
+
+User-interface
+box-sizing
+resize
+outline
+
+Generated Content
+content
+
+
+
+
+
+
+
+
+
+
+
+
+
