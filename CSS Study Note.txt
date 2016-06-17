@@ -1,0 +1,214 @@
+CSS2  Properties study Note
+Font:
+font
+font-fanily
+font-size
+font-stretch
+font-style
+font-weight
+text-decoration
+text-shadow
+text-transform
+line-height
+letter-spacing
+word-spacing
+
+Text:
+text-indent
+text-align
+writing-mode
+direction
+word-break
+line-break
+white-space
+word-wrap
+text-autospace
+text-justify
+
+Background:
+background
+background-attachment
+background-color
+background-image
+background-position
+background-positionX
+background-positionY
+background-repeat
+
+Positioning:
+position
+z-index
+top
+right
+bottom
+left
+
+Dimensions:
+height
+max-height
+min-height
+width
+max-width
+min-width
+
+Layout:
+clear
+float
+clip
+overflow
+overflow-x
+overflow-y
+display
+visibility
+
+Margins
+margin
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+Outlines
+outline
+outline-color
+outline-style
+outline-width
+
+Border:
+border-color
+border-style
+border-width
+
+Paddings:
+padding
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+Lists:
+list-style
+list-style-image
+list-style-position
+list-style-type
+marker-offset
+
+Table:
+border-collapse
+border-spacing
+captioon-side
+empty-cells
+table-layout
+speak-header
+
+cursor:{
+	auto  :　  默认值。浏览器根据当前情况自动确定鼠标光标类型。 
+	all-scroll  :　 IE6.0  有上下左右四个箭头，中间有一个圆点的光标。用于标示页面可以向上下左右任何方向滚动。 
+	col-resize  :　 IE6.0  有左右两个箭头，中间由竖线分隔开的光标。用于标示项目或标题栏可以被水平改变尺寸。 
+	crosshair  :　  简单的十字线光标。 
+	default  :　  客户端平台的默认光标。通常是一个箭头。 
+	hand  :　  竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。 
+	move  :　  十字箭头光标。用于标示对象可被移动。 
+	help  :　  带有问号标记的箭头。用于标示有帮助信息存在。 
+	no-drop  :　 IE6.0  带有一个被斜线贯穿的圆圈的手形光标。用于标示被拖起的对象不允许在光标的当前位置被放下。 
+	not-allowed  :　 IE6.0  禁止标记(一个被斜线贯穿的圆圈)光标。用于标示请求的操作不允许被执行。 
+	pointer  :　 IE6.0  和 hand 一样。竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。 
+	progress  :　 IE6.0  带有沙漏标记的箭头光标。用于标示一个进程正在后台运行。 
+	row-resize  :　 IE6.0  有上下两个箭头，中间由横线分隔开的光标。用于标示项目或标题栏可以被垂直改变尺寸。 
+	text  :　  用于标示可编辑的水平文本的光标。通常是大写字母 I 的形状。 
+	vertical-text  :　 IE6.0  用于标示可编辑的垂直文本的光标。通常是大写字母 I 旋转90度的形状。 
+	wait  :　  用于标示程序忙用户需要等待的光标。通常是沙漏或手表的形状。 
+	*-resize  :　  用于标示对象可被改变尺寸方向的箭头光标。w-resize | s-resize | n-resize | e-resize | ne-resize | sw-resize | se-resize | nw-resize 
+	url ( url )  :　 IE6.0  用户自定义光标。使用绝对或相对 url 地址指定光标文件(后缀为 .cur 或者 .ani )。 
+}
+
+
+SELECTORS:
+通配选择符 (Universal Selector) 例: *{}
+类型选择符 (Type Selectors) 例: a{}
+属性选择符 (Attribute Selectors) 例: div[speed='fast']{}
+包含选择符 (Sescendant Selectors) 例: table td{}
+子对象选择符 (Child Selectors) 例: body > p{}
+ID选择符 (ID Selectors) 例: #name{}
+类选择符 (Class Selectors) 例: .name{}
+选择符分组 (Grouping) 例: .td1,div,a,body{}
+伪类及伪对象选择符 (Pseudo Selectors) 例: div:first-letter{} a:hover{}
+
+
+Pseudo-Classes:
+:link
+:hover
+:active
+:visited
+:first-child
+:first
+:left
+:right
+:lang
+:focus
+
+Pseudo-Elements:
+:after
+:first-letter
+:first-line
+:before
+
+At-Rules:
+@import
+@charset
+@font-face
+@fontdef
+@page
+@media
+
+Declaration:
+!important
+
+
+
+
+
+CSS3 Properties Study Note
+
+Border:
+border-color
+border-image
+border-radius
+
+Background:
+background-origin
+background-clip
+background-size
+
+
+Color:
+HSL colors
+HSLA colors
+opacity
+
+Text effects:
+text-shadow
+text-overflow
+word-wrap
+white-space
+
+User-interface
+box-sizing
+resize
+outline
+
+Generated Content
+content
+
+
+
+
+
+
+
+
+
+
+
+
+
