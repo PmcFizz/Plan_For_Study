@@ -1,0 +1,52 @@
+			JavaScript Study Note
+
+
+今天看了js 的一个比较旧的教程文档,总体上没什么收获, 以后选教程最好还是看看创建时间和更新时间 
+免得看完了,介绍的都是一些过时的东西.意义甚微...
+
+看了一部分 JScript 文档,感觉好不错.2000年写的,还是有很多有用的方法.
+明天需要把这个文档看完,并复习以前写的css 笔记
+
+function pasta(grain, width, shape, hasEgg)
+{
+    // 是用什么粮食做的？
+    this.grain = grain;
+
+    // 多宽？（数值）
+    this.width = width;     
+
+    // 横截面形状？（字符串）
+    this.shape = shape;   
+
+// 是否加蛋黄？（boolean）
+    this.hasEgg = hasEgg;  
+}
+
+var spaghetti = new pasta("wheat", 0.2, "circle", true);
+pasta.prototype.foodgroup = "carbohydrates"
+spaghetti.foodgroup
+
+
+创建对象  对象属性  对象方法, new对象 
+
+内部对象
+创建高级对象:
+function Circle(xPoint,yPoint,radius){
+	this.x=xPoint;
+	this.y=yPoint;
+	this.r=radius;
+}
+var aCircle=new Circle(5,11,99);
+
+Circle=prototype.pi=Math.PI;
+function ACirclesArea(){
+	return this.pi*this.r*this.r; //计算面积
+}
+Cricle.prototype.area=ACircleArea;
+var a=ACircle.area();
+
+递归:
+如果这个数小于零,则拒绝接受.如果不是一个整数,则将其向下舍入为相邻的整数,如果这个数为0,则其阶乘为1.
+如果这个数大于0 则将其与相邻的数的阶乘相乘.
+要计算任何一个大于0 的数的阶乘,至少需要计算一个其他数的阶乘,用来实现这个功能的函数就是已经位于其中的函数,该函数在执行当前的这个数之前,必须调用它本身来计算相邻的较小数的阶乘,这就是一个递归实例
+

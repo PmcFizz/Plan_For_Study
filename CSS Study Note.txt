@@ -201,6 +201,7 @@ Generated Content:
 content
 
 
+<<<<<<< HEAD
 
 --CSS3 study--
 
@@ -415,3 +416,5 @@ http://www.runoob.com/try/try.php?filename=trycss_image_gallery_responsive
 按钮:
 点击效果
 阴影效果
+=======
+>>>>>>> 583cd833672c63250ec98f04ed75cdb52fb8385e
