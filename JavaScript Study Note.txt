@@ -50,3 +50,18 @@ var a=ACircle.area();
 如果这个数大于0 则将其与相邻的数的阶乘相乘.
 要计算任何一个大于0 的数的阶乘,至少需要计算一个其他数的阶乘,用来实现这个功能的函数就是已经位于其中的函数,该函数在执行当前的这个数之前,必须调用它本身来计算相邻的较小数的阶乘,这就是一个递归实例
 
+递归实例--
+function factorial(aNaumber){
+	aNumber=Math.floor(aNumber);
+	if(aNumber<0){
+		return -1
+	}
+	if(aNumber==0){
+		return 1;
+	}else{
+		return (aNumber*factorial(aNumber-1));
+	}
+}
+
+
+
