@@ -1,7 +1,7 @@
 CSS2  Properties study Note
 Font:
 font
-font-fanily
+font-family
 font-size
 font-stretch
 font-style
