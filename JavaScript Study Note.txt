@@ -87,3 +87,168 @@ with 语句可以方便地用来引用某个特定对象中已有的属性,但�
 
 document.write();
 document.writeln();
+
+alert 
+confirm()
+prompt
+
+数组处理:
+
+join()
+length
+reverse
+slice
+sort
+
+日期和时间 Date
+getDate
+getDay
+getFullYear
+getHours
+getMilliseconds
+getMinutes
+getMonth
+getSeconds
+getTime
+getTimezoneOffset
+getYear
+
+
+函数:
+arguments
+Caller
+
+Global方法
+Global 
+escape
+unescape
+eval
+isFinite
+isNaN
+
+数学:
+Math
+abs
+acos
+asin
+atan2
+ceil
+cos
+exp
+floor
+log
+max
+min
+pow
+random
+round
+sin 
+sqrt
+tan
+
+字符串:
+String
+charAt
+charCodeAt
+fromCharCode
+indexOf
+lastIndexOf
+split
+toLowerCase
+toUpperCase
+concat
+slice
+math
+replace
+search
+
+JS方法:
+
+Math.abs(number);
+求一个数字的绝对值
+
+Math.acos(number);
+求一个数的反余弦值
+
+apply 
+apply([thisObj[,argArray]]);
+应用某一对象的一个方法,用另一个对象替换当前对象.
+
+Math.asin(number);
+返回值为数字参数的反正炫值
+
+Math.atan(number);
+返回值为其数字参数的反正切值
+
+Math.atan2(y,x);
+返回X轴到点(y,x)点的角度(以弧度为单位);
+
+call 方法
+call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
+参数:
+thisObj 可选项,将被用作当前对象的对象.
+arg1 arg2 argN
+可选项,将被传递方法参数序列
+说明:
+call 方法可以用来代替另一个对象调用一个方法.call 方法可将一个函数的对象上下文从初始的上下文改变为有thisObj 指定的新的对象
+
+
+ceil方法
+Math.ceil(number);
+返回大于等于其数字参数的最小整数
+
+charAt()方法
+strObj.charAt(index);
+返回指定索引位置处的字符
+
+charCodeAt方法:
+strObj.charCodeAt(index);
+返回一个正数,代表指定位置上字符的Unicode 编码
+
+compile 方法
+rgExp.compile(pattern,[flags]);
+把正则表达式编译为内部格式,从而执行的更快
+
+concat 方法(Array)
+array1.concat([item1[, item2[, . . . [, itemN]]]])
+返回一个新的数组,这个新数组是由二个或更多数组组合而成.
+
+concat方法(String)
+string1.concat([string2[, string3[, . . . [, stringN]]]]);
+返回字符串值,该值包含了二个或更多提供的字符的链接.
+concat 方法的结果等于 result=string1+string2+string3
+
+cos方法:
+Math.cos(number);
+返回值为其数字参数的余弦值.
+
+decodeURL 方法
+decodeURL(URLstring)
+返回一个已编码的统一资源标识符(URI) 的非编码形式.
+
+decodeURIComponent方法
+decodeURIComponent(encodedURIString)
+返回统一资源标识符 (URI) 的一个已编码组件的非编码形式。
+
+encodeURI 方法
+encodeURI(URIString)
+将文本字符串编码为一个有效的统一资源标识符 (URI)。
+
+encodeURIComponent 方法
+encodeURIComponent(encodedURIString)
+将文本字符串编码为一个统一资源标识符 (URI) 的一个有效组件。
+
+eval方法
+eval(codeString)
+检查JS 代码并执行
+
+exec方法
+rgExp.exec(str);
+用正则表达模式在字符串中运行查找,并返回包含该查找结果的一个数组
+
+exp方法
+Math.exp(number);
+返回e的幂。 
+
+
+
