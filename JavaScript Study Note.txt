@@ -63,5 +63,27 @@ function factorial(aNaumber){
 	}
 }
 
+传递参数给函数:
+ 按值传递一个参数给函数就是制造该函数的一个独立副本,即一个只存在于该函数内的副本,即使按引用传递对象和数组时,如果直接在函数用新值覆盖原先的值,在函数外并不反映新值.只有只有对象的属性或者数组的元素改变时 在函数外才能看的出来.
 
+function Clobber(param){
+	param=new Object();
+	param.message="This will not work";
+}
 
+function Update(param){
+	params.message="I was Changed";
+}
+var obj =new Object();
+obj.message="This is the origin ";
+Clobber(obj);
+alert(obj);
+
+Upldate(obj);
+alert(obj);
+
+with 关键字:
+with 语句可以方便地用来引用某个特定对象中已有的属性,但是不能用来给对象添加属性.要给队形创建新的属性,必须明确地引用该对象.
+
+document.write();
+document.writeln();
