@@ -395,6 +395,55 @@ round 方法
 Math.round(number);
 返回与给出的数值表达式最接近的整数
 
+search方法:
+stringObj.search(rgExp);
+返回与正则表达式查找内容匹配的第一个字符串的位置
+
+setDate方法:
+dateObj.setDate(numDate);
+设置Date对象中用本地时间表示的数字日期
+
+setFullYear方法:
+dateObj.setFullYear(numYear[, numMonth[, numDate]]);
+设置Date 对象中用本地时间表示的年份值
+
+setHours方法:
+dateObj.setHours(numHours[, numMin[, numSec[, numMilli]]]);
+设置Date 对象中用本地时间表示的小时值
+
+setMilliseconds 方法:
+dateObj.setMilliseconds(numMilli);
+设置Date对象中用本地时间表示的毫秒值
+
+setMinutes方法:
+dateObj.setMinutes(numMinutes[, numSeconds[, numMilli]]);
+设置Date 对象中用本地时间表示的分钟值
+
+setMonth 方法:
+dateObj.setMonth(numMonth[, dateVal]);
+设置Date对象中用本地时间表示的月份值
+
+setSeconds 方法:
+dateObj.setSeconds(numSeconds[, numMilli]);
+设置Date 对象中用本地时间表示的秒钟值
+
+setTime 方法:
+dateObj.setTime(milliseconds);
+设置Date对象的日期和时间值
+
+setYear方法:
+dateObj.setYear(numYear);
+设置Date 对象中的年份值
+
+shift方法:
+arrayObj.shift();
+移除数组中第一个元素并返回该元素
+
+
+
+
+
+
 
 
 
