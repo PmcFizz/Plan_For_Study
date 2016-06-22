@@ -439,6 +439,99 @@ shift方法:
 arrayObj.shift();
 移除数组中第一个元素并返回该元素
 
+sin方法:
+Math.sin(number);
+返回数字的正弦值
+
+slice方法(Array):
+arrayObj.slice(statr,[end]);
+返回一个数组的一段
+
+slice方法(String):
+strigObj.slice(start,[end]);
+返回字符串的片段
+
+sort方法:
+arrayObj.sort(sortFuntion);
+返回一个元素已经进行了排序的Array对象
+
+splice方法:
+arrayObj.splice(start, deleteCount, [item1[, item2[, . . . [,itemN]]]])
+从一个数组中移除一个或多个元素,如果有必要,在移除元素的位置插入新元素,返回所移除的元素
+
+split方法:
+stribgObj.split([separator[, limit]]);
+将一个一个字符串分割为子字符串,然后经结果作为字符串数组分返回.
+
+sqrt方法
+Math.sqrt(number);
+返回数字的平方根
+
+substr方法:
+stringvar.substr(start,[,length]);
+返回一个从指定位置开始的指定长度的子字符串.
+
+substring 方法:
+stringObj.substring(start,end);
+返回位于String 对象中指定位置的子字符.
+
+tan方法:
+Math.tan(number);
+返回数字的正弦值
+
+test方法:
+rgexp.test(str);
+返回一个Boolean值,它指出在被查找的字符串中是否存在模式
+
+toArray方法:
+safeArray.toArray();
+返回一个由VBArray转换而来的标准JScript数组
+
+toDateString 方法:
+objDate.toDateString();
+已字符串值的形式返回一个日期
+
+toExponential方法:
+numObj.toExponential([fractionDigits]);
+返回一个字符串,其中包含一个以指数计数法表示的数字
+
+toFixed方法:
+numObj.toFixed([fractionDigits]);
+返回一个字符串,代表一个以定点表示的数字
+
+
+toLocaleLowerCase方法:
+stringVar.toLocaleLowerCase();
+返回一个字符串,其中所有的字母字符都被转化为小写
+
+toLocaleLowerCase方法
+stringVar.toLocaleUpperCase();
+返回一个字符串,其中所有的字母字符都被转换为大写
+
+toString方法:
+objectname.toString([radix]);
+返回对象的字符串表示
+
+toTimeString 
+objDate.toTimeString();
+以字符串形式返回时间
+
+unshift 方法:
+arrayObj.unshift([item1[, item2 [, . . . [, itemN]]]]);
+将指定的元素插入数组开始位置并返回该数组
+
+valueOf方法:
+object.valueOf();
+返回指定对象的原始值
+
+
+
+
+
+
+
+
+
 
 
 
