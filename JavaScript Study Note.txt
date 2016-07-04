@@ -335,7 +335,7 @@ Math.log(number);
 返回数字的自然数
 
 match 方法
-stringObj.matcg(rgExp);
+stringObj.match(rgExp);
 使用正则表达式模式对字符串执行查找,并将包含查找的结果作为数组返回
 
 max 方法
