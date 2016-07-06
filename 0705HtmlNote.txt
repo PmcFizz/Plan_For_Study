@@ -1,3 +1,33 @@
+1:Doctype 的作用 标准模式和兼容模式各有什么区别
+
+<!DOCTYPE> 声明位于HTML的第一行,处于<html>标签之前,告诉浏览器的解析器用 什么
+文档标准来解析这个文档,DOCTYPE 不存子啊或格式不正确会导致文档以兼容模式呈现
+
+标准模式的排版和js运作模式都是以该浏览器支持的最高标准运行,在兼容模式中,页面以宽松的向后兼容的方式显示,
+模拟老式的浏览器的行为已防止站点无法工作.
+
+
+2:HTML5 为什么只写<!DOCTYPE HTML>
+html5 不基于SGML 因此不需要对DTD 进行引用,但是需要DOCTYPE 
+l来规范 浏览器的行为(让浏览器按照他们应该的方式来运行);
+而HTML4.01 基于SGML 所以需要对DTD 进行引用才能告知浏览器文档所使用的文档类型
+
+
+3:行内元素有哪些?块级元素有哪些? 空(void) 元素有哪些
+ 首先:css 规范规定,每个元素都有display 属性,确定该属性的类型,
+ 每个元素都有默认的display值 如div的默认display值是block
+ (1) 行内元素有 a b span  img input select stong
+ (2) 块级元素有 div ul ol li dl dt dd h1 h2 h3 h4..p
+ (3) 常见的空元素 <br> <hr> <img> <input> <link> <meta>
+
+
+4:页面导入样式时,受用link 和@import 有什么区别?
+(1) link 属于XHTML 标签 除了加载css外,还能用于定义RSS 定义rel 链接属性等作用,
+而@import 时css 提供的只能用于加载css
+(2) 页面被加载的时, link 会同时被加载,而@import 引用的CSS 
+会等页面被加载完再加载
+(3) import 是css2.1 提出的,只有在IE5 以上才能被识别,而link 时XHTML 标签木兼容问题
+
 表格中 跨行 和跨列
 rowspan 规定单元格可横跨的行数
 colspan 规定单元的可横跨的列数
