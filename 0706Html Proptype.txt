@@ -1,0 +1,17 @@
+<!--HTML 全局属性-->
+accesskey
+class
+contenteditable
+contextmenu
+data-*
+dir
+draggable
+dropzone
+hidden
+id
+lang
+spellcheck
+style
+tabindex
+title
+translate
