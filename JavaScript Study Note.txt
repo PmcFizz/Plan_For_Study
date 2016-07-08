@@ -348,7 +348,7 @@ Math.min(number);
 
 moveFirst 方法
 enumObj.moveFirst();
-重新将集合中国的当前项设置为第一项
+重新将集合中的当前项设置为第一项
 
 moveNext 方法
 enumObj.moveNext();
@@ -389,7 +389,7 @@ stringObj.replace(rgExp,replaceText)
 
 reverse 方法
 arrayObj.reverse();
-返回一个元素顺序诶翻转的Array 对象
+返回一个元素顺序被翻转的Array 对象
 
 round 方法
 Math.round(number);
