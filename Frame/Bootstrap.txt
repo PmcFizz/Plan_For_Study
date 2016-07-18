@@ -114,7 +114,16 @@
 	(3) 带边框的表格 添加.table-bordered 类为表格和其中的每个单元格增加边框
 	(4)通过添加.table-hover 类可以让<tbody> 中的每一行对鼠标悬停状态做出响应
 	(5) 通过添加.table-condensed类可以让表格更加紧凑,单元格中的内补(padding)均会减半.
-	
+
+23:表单:
+	(1)基本实例 单独的表单控件会被自动赋予一些全局样式.所有设置了.form-control类的<input>,<textarea>和<select>元素都将被默认设置宽度属性为width:100%
+	将label 元素和前面提到的控件包裹在.form-group中可以获得最好的排列.
+	(2)内联表单
+	为<form> 元素添加.form-inline 类可使其内容左对齐并且表现为inline-block 级别的控件.只适用于视口至少在768px宽度时
+	可能需要手动设置宽度:在bootstrap中输入框和多选框控件默认被设置为width:100% 宽度,在内联表单,我们将这些元素的宽度设置为width:auto 一次多个控件可以排列在同一行,
+	一定要添加lable标签
+	如果你没有为每个输入控件设置label 标签,屏幕阅读器将无法正确识别,对于这些内联表单,你可以通过为lable 设置.sr-only 类将其隐藏,还有一些辅助技术提供lable标签的替代方案,比如aria-label aria-labelledby 或title 属性,如果这些都不存在,屏幕阅读器可能会采用使用placeholder属性如果存在的话,使用占位符来代替其它标签,不值得提倡.
+
 
 
 
