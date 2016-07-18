@@ -39,3 +39,70 @@ insertAfter()
 insertBefore()
 wrap()
 
+
+next()
+parent()
+closest()
+children()
+siblings()
+
+.insertAfter() 和 .after 在现存元素的外部,从后面插入元素
+.insertBefore  和 .before 在现存元素的外部,从前面插入元素
+appendTo 和append 在现存元素的内部,从后面插入元素
+.prependTo 和 .prepend() 在现存元素的内部,从前面插入元素
+
+.clone()
+.remove()
+.detach()
+.empty()
+
+$.trim()
+$.each()
+$.inArray()
+$.grep()
+$.extend()
+$.makeArray()
+$.type()
+$.isArray()
+$.isEmptyObject()
+$.isFunction()
+$.isPlainObject()
+$.support()
+
+.fadeIn()
+.fadeOut()
+.fadeTo()
+.hide()
+.show()
+.slideUp()
+.slideToggle()
+.toggle()
+
+$("ul > li").click(function () {  
+    var index = $(this).prevAll().length;  
+}); 
+
+15. 如何使用jQuery来预加载图像
+jQuery.preloadImages = function() {  
+    for(var i = 0; i < arguments.length; i++) {  
+        $("<img />").attr('src', arguments[i]);  
+    }  
+};  
+//用法  
+$.preloadImages('image1.gif', '/path/to/image2.png', 'some/image3.jpg');  
+
+19. 如果自动滚动到页面中的某区域
+jQuery.fn.autoscroll = function(selector) {  
+    $('html,body').animate(  
+        {scrollTop: $(selector).offset().top},  
+        500  
+    };  
+}  
+//然后像这样来滚动到你希望去到的class/area上。  
+$('.area_name').autoscroll(); 
+
+setTimeout(function() {  
+  $('.mydiv').hide('blind', {}, 500)  
+}, 5000);  
+//而这是在1.4中可以使用delay()这一功能来实现的方式（这很像是休眠）  
+$(".mydiv").delay(5000).hide('blind', {}, 500);  
