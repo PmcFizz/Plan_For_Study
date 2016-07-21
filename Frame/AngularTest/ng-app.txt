@@ -1,0 +1,9 @@
+ng-app
+ng-controller
+ng-init
+ng-model
+{{ firstName}}
+ng-repeat
+
+
+
