@@ -4,6 +4,171 @@ ng-init
 ng-model
 {{ firstName}}
 ng-repeat
+Scope 作用范围
+View 视图 即 HTML
+Model 模型 当前视图中可用的数据
+Controller 控制器 即javascript 函数 可以添加或修改属性
+
+根作用域 所有的应用都有一个$rootScoe 他可以作用在ng-app 指令包含的所有HTML元素中
+
+ng-controller 指令定义了应用程序控制器
+控制器是javaScript对象 由标准的Javascript 对象的构造函数创建
+
+引用解析,AngularJS 应用程序由ng-app 定义,应用程序在<div> 内运行.
+ng-controller="myCtrl" 属性是一个AngularJS 指令,用于定义一个控制器.
+myCtrl 函数是一个JavaScript 函数,AngularJS 使用$scope对象来调用控制器,
+
+AngularJS 过滤器
+currency 格式化数字为货币格式
+filter 从数组中选择一个子集
+lowercase 格式化字符串为小写
+orderBy 根据某个表达式排列数组
+uppercase 格式化字符串为大写
+
+表达式中添加过滤器 过滤器可以通过一个管道字符 ( | ) 和一个过滤器添加到表达式中...
+{{lasetName | uppercase}}
+
+
+AngularJS服务 Service
+
+$location服务 他可以返回当前页面的url 地址
+
+$http是AngularJS 应用中最常用的服务,服务想服务器发送请求,应用服务器传送过来的数据
+var app=angular.module('myApp',[]);
+app.controller('myCtrl',function($scope,$http){
+	$http.get("welcome.htm").then(function(response){
+		$scope.myWelcome=response.data;
+	});
+});
+
+$timeout 服务
+var app=angular.module.('myApp',[]);
+app.controller('myCtrl',function($scope,$timeout){
+	$scope.myheader="Hello World !";
+
+	$timeout(function(){
+		$scope.myHeader="How are you today?";
+	},2000);
+})
+
+
+$http 请求web服务器的数据
+$http.get(url) 用于读取服务器数据的函数
+
+var app=angular.module('myApp',[]);
+app.controller('customersCtrl',function($scope,$http){
+	$http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
+	.success(function(response){$scope.name=response.records;});
+});
+
+ng-options 创建选择框
+<select ng-model="selectedName" ng-options="x for x in names">
+</select>
+
+ng-repeat 指令是通过数组来循环HTML 代码来创建下拉列表 但ng-options指令更适合创建下拉列表 它有以下优势:
+使用ng-options 的选项的一个对象 ng-repeat 是一个字符串
+
+AngularJS 表格
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+	<table>
+		<tr ng-repeat="x in names |orderBy :'Country'">
+			<td>{{$index+1}}</td>
+			<td>{{x.Name}}</td>
+			<td>{{x.Country}}</td>
+		</tr>
+	</table>
+</div>
+<script>
+var app=angular.module('myApp',[]);
+app.controller('customersCtrl',function($scope,$http){
+	$http.get("http:www.runoob.com/try/angularjs/data/Cutomers_JSON.php")
+	.success(function(response){$scope.nams=response.records;});
+});
+</script>
+
+
+ng-disabled 指令
+ng-disabled 指令直接绑定应用程序数据到HTML的disabled 属性
+
+
+ng-show 指令隐藏或显示一个HTML元素
+
+<div ng-app="">
+<p ng-show="hour > 12">我是可见的.</p>
+</div>
+
+
+ng-hide 指令用于隐藏或显示HTML 元素
+
+ng-click 指令定义了Angular点击事件
+
+添加指令
+<div ng-app="myApp" runoob-directive></div>
+<script>
+var app=angular.module('myApp',[]);
+app.directive("runoobDirective",function(){
+	return {
+		template:"我在指令构造器中创建"
+	}
+})
+</script>
+
+
+
+表单验证
+
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="user.lastName">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.master = {firstName: "John", lastName: "Doe"};
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+</script>
+
+
+$dirty 表单没有填写记录
+$valid 字段内容合法的
+$invalid 字段内容是非法的
+$pristine 表单没有填写记录
+
+
+Angularjs 全局API
+
+Angularjs 全局API 
+
+AngularJS 全局API 用于执行常见任务的JAVAsCRIPT 函数集合 如:
+比较对象
+迭代对象
+转换对象
+
+angular.lowercase()
+angular.uppercase()
+angular.isString()
+angular.isNumber()
+
+Angularjs 包含 html 中包含Html
+ng-include
+
+
+
+
 
 
 
