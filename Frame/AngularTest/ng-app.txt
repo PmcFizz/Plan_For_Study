@@ -321,6 +321,76 @@ mainApp.constant('configparam',"constant value");
 </html>
 
 
+AngularJS 路由
+本章节我们将为大家介绍AngularJS 路由
+AngularJs 路由允许我们通过不同的url访问不同的内容
+通过AngularJS 可以实现多视图的单页web应用SPA
+通常我们的url形式为 http://runoob.com/first/page 但在单页web应用中AngularJS 通过#+ 标记实现
+例如
+http://runoob.com/#/first
+http://runoob.com/#/second
+http://runoob.con/#/third
+
+当我们点击以上任意一个链接时,向服务器请求的地址都是一样的 (http://runoob.com/).
+因为#号之后的内容再向服务端请求时会被浏览器忽略掉,所以我们就不需要再客户端实现#
+号后面内容的功能实现,AngularJS 路由就是通过#+ 标记 帮助我们区分不同逻辑页面
+并将不同的页面绑定到对应的控制器上
+
+
+AnguarJS参考手册
+AngularJS 指令
+ng-app
+ng-bind
+ng-bind-html
+ng-blur
+ng-change
+ng-checked
+ng-class
+ng-class-even
+ng-class-odd
+ng-click
+ng-cloak
+ng-controller
+ng-copy
+ng-csp
+ng-cut
+ng-dbclick
+ng-disabled
+ng-focus
+ng-form
+ng-hide
+ng-href
+ng-if
+ng-include
+ng-init
+ng-jq
+ng-keydown
+ng-keypress
+ng-list
+ng-model
+ng-model-options
+ng-mousedown
+ng-mouseenter
+ng-mouseleave
+ng-mousemove
+ng-mouseover
+ng-mouseup
+ng-non-bindable
+ng-open
+ng-options
+ng-paste
+ng-pluralize
+ng-readonly
+ng-repeat
+ng-selected
+ng-show
+ng-src
+ng-srcset
+ng-style
+ng-submit
+ng-switch
+ng-transclude
+ng-value
 
 
 
