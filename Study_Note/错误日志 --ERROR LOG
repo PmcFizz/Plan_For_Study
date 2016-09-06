@@ -1,0 +1,115 @@
+错误日志 --ERROR LOG
+
+1:jquery ajax  当dataType 参数忘记写时会出现返回数据却无法调用回调函数success里的对象判断方法.此时控制台不报错
+
+
+2:使用函数声明 可以在声明代码前调用,但函数表达式创建的函数却不行 只能在创建后调用
+如下:
+//使用函数表达式 创建函数 只能在创建后调用
+alert(sum(12,12));  //sum is not a function(…)(anonymous function) @ VM56:1
+var sum=function(num1,num2){
+	return num1+num2
+}
+//使用函数声明 可以在声明代码之前调用
+alert(sum(12,12));  //24
+function sum(num1,num2){
+	return num1+num2
+}
+
+
+3: 在使用gulp的插件 gulp-header是 报以下错误 原因是 加入的 字符串中含有<%  需要使用 <%= start %>转译
+F:\planforstudy\glup\node_modules\lodash.template\index.js:356
+    throw result;
+    ^
+SyntaxError: Unexpected token ILLEGAL
+    at Function (native)
+
+
+4:使用slidesjs 制作banner时 又是出现排版错乱 竖排
+原因是在一个页面里对banner的dom运行了二次slider函数  此插件不支持
+解决方案:刷新页面
+
+
+5:css 在小屏和正常 大屏不正常 使用  解决实例如商城切换店铺full-view dom的处理方式
+不考虑大于640px 的部分
+@media only screen and (min-width:640px){
+	.full-view{width: 640px !important; margin: 0 auto;}
+}
+
+
+6:当一个调用一个需要参数的函数时  但调用的时候不能不能传参数 可以借助中间函数
+function a(b,c){
+	b(c)
+}
+
+
+7:使用browser-sync 启动监听时报错
+F:\planforstudy\testBrsync>browser-sync start --server --files "css/*.css"
+fs.js:549
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\AppData\R
+les\browser-sync\node_modules\browser-sync-ui\templates\plugin.tmpl'
+    at Error (native)
+    at Object.fs.openSync (fs.js:549:18)
+    at Object.fs.readFileSync (fs.js:397:15)
+    at templateFile (C:\Users\Administrator\AppData\Roaming\npm\node_modules\bro
+es\browser-sync-ui\lib\hooks.js:11:15)
+    at Object.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modul
+_modules\browser-sync-ui\lib\hooks.js:4:22)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+    at Function.Module._load (module.js:300:12)
+
+解决方案:npm update browser-sync-ui   然后进入
+C:\Users\Administrator\AppData\Roaming\npm\node_modules\browser-sync-ui\templates
+将此目录下的文件全部拷贝覆盖
+C:\Users\Administrator\AppData\Roaming\npm\node_modules\browser-sync\node_modules\browser-sync-ui\templates
+再运行 browser-sync start --server --files "css/*.css"  奇迹出现了
+
+
+8:使用angularjs 时出现
+angular.js:6 Uncaught Error: [$injector:modulerr] 
+http://errors.angularjs.org/1.4.6/$injector/modulerr?p0=myAapp&p1=Error%3A%…at%20d%20(http%3A%2F%2F192.168.1.201%3A8020%2Ftest%2Fangular.js%3A19%3A463)
+原因是页面上的ng-app属性 与js中 获取的不一样
+
+
+9:使用browser-sync 运行browser-sync start --server --files "**/*/*.html, **/*/*.css"
+能够正常启动 访问  但是修改文件保存后不能自动刷新
+在全局匹配资源的时候 不能使用 **/*/*.html  要使用 **/*.html
+
+
+10:js在全局js 里使用return;报错
+在全局js里写ruturn 会报错 return 不能在全局js里写 只能在局部函数里用
+
+
+11:使用gulp-change 报错
+
+gulp脚本这样写
+
+gulp.task("onlychangejs", function() {
+	gulp.src(sourcejs)
+		.pipe(change(distjs))
+		.pipe(uglify())
+		.pipe(rename({
+			extname: ".min.js"
+		}))
+		.pipe(gulp.dest(distjs))
+})
+报错内容如下
+
+[21:34:00] Finished 'onlychangejs' after 10 ms
+stream.js:74
+      throw er; // Unhandled stream error in pipe.
+      ^
+
+TypeError: run.call is not a function
+    at D:\Documents\HBuilderProject\FizzTeacher\node_modules\gulp-change\index.js:31:14
+    at wrappedMapper (D:\Documents\HBuilderProject\FizzTeacher\node_modules\map-stream\index.j
+9)
+    at Stream.stream.write (D:\Documents\HBuilderProject\FizzTeacher\node_modules\map-stream\i
+s:96:21)
+    at write (D:\Documents\HBuilderProject\FizzTeacher\node_modules\vinyl-fs\node_modules\read
+
+错误是因为gulp-changed 写成了 gulp-change         
