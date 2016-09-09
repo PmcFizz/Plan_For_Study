@@ -113,3 +113,9 @@ s:96:21)
     at write (D:\Documents\HBuilderProject\FizzTeacher\node_modules\vinyl-fs\node_modules\read
 
 错误是因为gulp-changed 写成了 gulp-change         
+
+
+12:在微信浏览器里运行$(document).on("click","li.money",somefun);
+点击按钮不能执行somefun函数 换成onclick 就可以
+
+解决方案:TODO
