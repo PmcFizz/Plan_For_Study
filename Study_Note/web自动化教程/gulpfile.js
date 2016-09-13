@@ -74,8 +74,22 @@ gulp.task("htmltojsp", function() {
 
 /**
  * 使用browser-sync 启动静态资源项目
-//npm install browser-sync -g
-//browser-sync start --server --files "**/*.html,**/*.css,**/*.js"
+*/
+gulp.task("uglifyjs",function(){
+	return gulp.src("js/**/*.js")
+	.pipe(uglify())
+	.pipie(rename({extname:".min.js"}))
+	.pipe(gulp.dest("dist/js"))
+})
+
+gulp.task("browserSync",['uglifyjs'],function(){
+	browserSync.init({
+		server:{baseDir:"./"}
+	})
+	gulp.watch("js/**/*.js",["uglifyjs"]).on("change",browserSyne.reload);
+	gulp.watch("view/**/*.html").on("change",browserSync.reload);
+	gulp.watch("css/**/*.css").on("change",browserSync.reload);
+})
 
 
 gulp.task("default", function() {
