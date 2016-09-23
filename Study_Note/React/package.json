@@ -1,0 +1,30 @@
+{
+  "name": "alone",
+  "version": "1.0.0",
+  "description": "Fizz teacher's automation create-project",
+  "main": "index.html",
+  "scripts": {
+    "test": "Test is loading"
+  },
+  "repository": {
+    "type": "git",
+    "url": "havn't push github"
+  },
+  "keywords": [
+    "gulp",
+    "browser-sync",
+    "chrome-workspace",
+    "webdevlop",
+    "automation"
+  ],
+  "author": "Fizz",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9"
+  }
+}

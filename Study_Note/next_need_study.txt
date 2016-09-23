@@ -1,0 +1,12 @@
+下阶段需要学习前端测试工具
+现记录一下测试工具和框架
+Selenium
+Qunit
+Mocha
+PhantomJS 
+Jasmine
+Jest 
+Jasmine
+Selenium 
+WebDriverTest 
+intern
