@@ -1,0 +1,4 @@
+React 事例需要引入这是三个js
+react.js   React的核心库
+react-dom.js  提供与Dom相关的功能
+browser.min.js  将JSX语法转化为JavaScript语法 

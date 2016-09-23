@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>index1</title>
+		<script src="../reactjs/react.min.js"></script>
+		<script src="../reactjs/react-dom.min.js"></script>
+		<script src="../reactjs/browser.min.js"></script>
+		<style>
+			.red{background-color: red;}
+		</style>
+	</head>
+
+	<body>
+		<div id="index1"></div>
+		<div id="index2"></div>
+		<div id="index3"></div>
+		<div id="index4"></div>
+		<div id="index5"></div>
+		<div id="index6"></div>
+		<div id="index7"></div>
+		<div id="index8"></div>
+		<div id="index9"></div>
+
+		<script type="text/babel">
+			var name=["Fizz","Edward","Tom","John"];
+			ReactDOM.render(
+			<h1>{
+				name.map(function(item){
+					return <div>Hello {item}</div>
+				})
+			}</h1>, document.querySelector("#index1"));
+			
+			var HelloMessage=React.createClass({
+				render:function(){
+					return <h1>Hello {this.props.name} <h2>{this.props.query}</h2></h1>;
+				}
+			});
+			ReactDOM.render(
+				<HelloMessage name="My name is createClass" query="First name" />,
+				document.querySelector("#index2")
+			);
+			
+			var NotesList=React.createClass({
+				render:function(){
+					return (
+						<ol>{
+							React.Children.map(this.props.children,function(child){
+								return <li>{child}</li>;
+							})
+						}</ol>
+					);
+				}
+			});
+			ReactDOM.render(
+				<NotesList>
+					<span>what</span>
+					<span>fuck</span>
+				</NotesList>,
+				document.querySelector("#index3")
+			)
+			
+			var MyTitle=React.createClass({
+				propTypes:{
+					title:React.PropTypes.number.isRequired,
+				},
+				getDefaultProps:function(){
+					return {title: "Would you mind eat dinner with me ?"}
+				},
+				render:function(){
+					return <h1>{this.props.title}<h2>{this.props.name}</h2></h1>;
+				}
+			})
+			var show="My name is  Fizz";
+			ReactDOM.render(
+			<MyTitle name={show} />,
+			document.querySelector("#index4"));
+			
+			var MyComponent=React.createClass({
+				handleClick:function(){
+					console.log(this.refs.myTextInput.dataset.mycolor);
+					console.log(this.refs.myTextInput.getAttribute("class"));
+				},
+				render:function(){
+					return(
+						<div>
+							<input type="text" data-mycolor="er12" className="acc_color" ref="myTextInput" />
+							<input type="button"  value="Focus the text input " onClick={this.handleClick} />
+						</div>
+					);
+				}
+			});
+			ReactDOM.render(
+				<MyComponent/>,
+				document.querySelector("#index5")
+			)
+			
+			var LikeButton=React.createClass({
+				getInitialState:function(){
+					return {liked:false};
+				},
+				handleClick:function(){
+					this.setState({liked:!this.state.liked});
+				},
+				render:function(){
+					var text=this.state.liked?'like':'havan\'t liked';
+					return (
+						<h1 onClick={this.handleClick}>
+							You {text} this  .Click to toggle.
+						</h1>
+					);
+				}
+			});
+			ReactDOM.render(
+			<LikeButton/>,
+			document.querySelector("#index5"));
+			
+			var Input=React.createClass({
+				getInitialState:function(){
+					return {value :"Hello!"};
+				},
+				handleChange:function(even){
+					this.setState({value:even.target.value});
+				},
+				render:function(){
+					var value=this.state.value;
+					return(
+						<div>
+							<input type="text" value={value} onChange={this.handleChange} />
+							<p>{value}</p>
+						</div>
+					);
+				}
+			});
+			ReactDOM.render(<Input/>,document.querySelector("#index6"));
+		
+			var HighHello=React.createClass({
+				getInitialState:function(){
+					return{
+						opacity:1.0
+					};
+				},
+				componentDidMount:function(){
+					this.timer=setInterval(function(){
+						var opacity=this.state.opacity;
+						opacity-=0.05;
+						if(opacity<0.1){
+							opacity=1.0;
+						}
+						this.setState({
+							opacity:opacity
+						});
+					}.bind(this),100);
+				},
+				render:function(){
+					return(
+						<h1 style={{opacity:this.state.opacity}} className="red">
+							Hello {this.props.name}
+						</h1>
+					);
+				}
+			});
+			ReactDOM.render(
+				<HighHello name="world"/>,
+				document.querySelector("#index7")
+			)
+		</script>
+	</body>
+
+</html>

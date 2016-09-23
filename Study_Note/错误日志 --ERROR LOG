@@ -118,4 +118,16 @@ s:96:21)
 12:在微信浏览器里运行$(document).on("click","li.money",somefun);
 点击按钮不能执行somefun函数 换成onclick 就可以
 
-解决方案:TODO
+解决方案:TODO  苹果版的自带浏览器Safair和微信浏览器不支持$(document).on("click","li.money"
+只能使用点击元素的父级元素 不能使用document
+
+
+13:在使用bootstrap 模态态框时 显示不正确 蒙罩层置于摸态框之上
+原因是因为在主内容里 ,有标签没有闭合 导致html结构错乱 将标签闭合即可显示正确
+
+14使用dataTable 报错 style is undefined
+原因是table里的列与dataTable里设置columns 不一样 导致的,
+
+15 npm 安装js包被墙 下载缓慢
+将npm资源地址更换为淘宝库
+npm config set registry https://registry.npm.taobao.org 
