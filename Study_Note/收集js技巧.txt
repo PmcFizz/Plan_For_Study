@@ -1,0 +1,22 @@
+从数组中随机获取成员
+var items=[12,548,23,"2","foo",9982,"Doe"];
+var randomItem=items[Math.floor(Math.random()*items.length)];
+
+获取指定范围内的随机数
+var x=Math.floor(Math.random()*(max-min+1))+min;
+
+生成从0到指定值的数字数组
+var numberArray=[],max=100;
+for(var i=1;numberArray.push(i++)<max;);
+
+生成随机的字母数字字符串
+function generateRandomAlphaNum(len){
+	var rdmString="";
+	for(;rdmString.length<len;rdmString+=Math.random().toString(36).substr(2));
+	return rdmString.substr(0,len);
+}
+
+
+打乱数字数组的顺序
+var numbers=[5,232,234,-423,3,534,12];
+numbers=numbers.sort(function(){return Math.random()-0.5});

@@ -2,3 +2,28 @@ React 事例需要引入这是三个js
 react.js   React的核心库
 react-dom.js  提供与Dom相关的功能
 browser.min.js  将JSX语法转化为JavaScript语法 
+
+getInitialState
+
+
+组件的声明周期
+Mounting  已插入真实Dom
+Updating 正在被重新渲染
+Unmounting 已移除真实Dom
+
+componentWillMount()
+componentDidMount()
+componentWillUpdate()
+componentDidUpdate()
+componentWillUnmount()
+
+this.props
+this.state
+this.setState
+
+
+this.refs
+
+goodid
+centerps
+goodspecid

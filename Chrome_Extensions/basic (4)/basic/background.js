@@ -53,7 +53,7 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 
 chrome.commands.onCommand.addListener(function(command) {
-  chrome.tabs.create({url: "http://www.google.com/"});
+  chrome.tabs.create({url: "http://baidu.com/"});
 });
 
 chrome.runtime.onMessage.addListener(function(msg, _, sendResponse) {
