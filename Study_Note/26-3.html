@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>JS 高级</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//事例一
+			//			var person = {
+			//				name: "Nicholas"
+			//			}
+			//			for(as in person){
+			//				console.log(as);
+			//			}
+			//			delete person.name;
+			//			console.log(person.name);
+			//			person.name="Fizz";
+			//			console.log(person.name);
+			//事例二
+			//			var person = {};
+			//			Object.defineProperty(person, "name", {
+			//				writable: false,
+			//				value: "Nicholas"
+			//			});
+			//			console.log(person.name);
+			//			person.name = "Fizz";
+			//			console.log(person.name);
+
+			//事例三
+			//			var person = {};
+			//			Object.defineProperty(person, "name", {
+			//				configurable: false,
+			//				value: "Nicholas"
+			//			});
+			//
+			//			//抛出错误
+			//			Object.defineProperty(person, "name", {
+			//				configurable: true,
+			//				value: "Nicholas"
+			//			});
+			//事例四
+			var person={};
+			Object.defineProperty(person,"name",{
+				value:"Nicholas",
+				enumerable:true
+			});
+			
+			console.log(person.name);
+			delete person.name;
+			console.log(person.name);
+			for(as in person){
+				console.log("........."+as);
+			}
+			Object.defineProperty(person,"name",{
+				configurable:true
+			});
+			
+		</script>
+	</body>
+
+</html>
