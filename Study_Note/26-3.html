@@ -42,22 +42,55 @@
 			//				value: "Nicholas"
 			//			});
 			//事例四
-			var person={};
-			Object.defineProperty(person,"name",{
-				value:"Nicholas",
-				enumerable:true
-			});
-			
-			console.log(person.name);
-			delete person.name;
-			console.log(person.name);
-			for(as in person){
-				console.log("........."+as);
-			}
-			Object.defineProperty(person,"name",{
-				configurable:true
-			});
-			
+			//			var person={};
+			//			Object.defineProperty(person,"name",{
+			//				value:"Nicholas",
+			//				enumerable:true
+			//			});
+			//			
+			//			console.log(person.name);
+			//			delete person.name;
+			//			console.log(person.name);
+			//			for(as in person){
+			//				console.log("........."+as);
+			//			}
+			//			Object.defineProperty(person,"name",{
+			//				configurable:true
+			//			});
+			//事例五
+			//			var book = {
+			//				_year: 2014,
+			//				edition: 1
+			//			}
+			//			Object.defineProperty(book, "year", {
+			//				get: function() {
+			//					return this._year
+			//				},
+			//				set: function(newValue) {
+			//					if(newValue > 2004) {
+			//						this._year = newValue;
+			//						this.edition += newValue - 2004;
+			//					}
+			//				}
+			//			});
+			//			book.year = 2005;
+			//			console.log(book.edition);
+			//			console.log(book.year);
+			//			console.log(book._year);
+			//实例六
+			function Person() {};
+			Person.prototype.name = "Nicholas";
+			Person.prototype.age = 29;
+			Person.prototype.job = "Software Engineer";
+			Person.prototype.sayName = function() {
+				console.log(this.name);
+			};
+
+			var person1 = new Person();
+			person1.sayName(); //"Nicholas";
+			var person2 = new Person();
+			person2.sayName(); //"Nicholas";
+			console.log(person1.sayName == person2.sayName); //true
 		</script>
 	</body>
 
