@@ -279,12 +279,130 @@ person1.name="Greg";
 console.log(person1.name); //"Greg" 来自实例
 console.log(person2.name); //"Nicholas" 来自原型
 
+/**
+ * 要取的对象上所有可枚举的实例属性,可以使用ECMAScript5的Object.keys()方法.这个方法接受一个对象作为参数
+ * 返回一个包含所有可枚举属性的字符串数组例如:
+ */
+function Person(){};
+Person.prototype.name="Nicholas";
+Person.prototype.age=29;
+Person.prototype.job="Software Engineer";
+Person.prototype.sayName=function(){
+	alert(this.name);
+}
+var keys=Object.keys(Person.prototype);
+alert(keys);
+
+var p1=new Person();
+p1.name="Rob";
+p1.age=31;
+var p1keys=Object.keys(p1);
+alert(p1keys);
+
+/**
+ * 如果你想要得到所有实例属性,无论它是否可枚举,都可以使用Object.getOwnPropertyNames()方法
+ */
+var keys=Object.getOwnPropertyNames(Person.prototype);
+console.log(keys);
 
 
+/**
+ * 更简单的原型语法
+ * 用一个包含所有属性和方法的对象字面量来重写这个原型对象
+ * 例如:
+ */
+function Person(){};
+Person.prototype={
+	name:"Nicholas",
+	age:29,
+	job:"Software Engineer",
+	sayName:function(){
+		console.log(this.name);
+	}
+}
+/**
+ * 上面这种写法 最终结果都是一样的,但有一个例外就是constructor属性不再指向Person 
+ * 因为使用上述语法本质上是完全重写了默认了prototype对象
+ * 虽然能用instanceof 操作符返回正确结果 但通过constructor 已经不能确定对象的类型了
+ * 如果constructor真的很重要的话  使用下面的代码
+ */
+Object.defineProperty(Person.prototype,"constructor",{
+	enumerable:false,
+	value:Person
+});
 
+/**
+ * 4:原型的动态性
+ * 由于在原型中查找值的过程是一次搜索,因此我们队原型对象多做的任何修改都能够立即从实例反映出来,
+ * 即使是先创建实例后修改原型也样如此 如:
+ */
+function Person(){};
+var friend=new Person();
+Person.prototype.sayHi=function(){
+	alert("hi");
+}
+friend.sayHi(); //hi 没有问题
 
+/**
+ * 先创建一个Person的实例person 然后再Person的prototype 中添加一个方法 sayHi() 
+ * 即使person实例是在添加新方法之前创建的,但它仍然可以访问这个新方法,其原因可以归结为实例与原型之间的松散连接关系.
+ * 但我们调用person.sayHi()时,首先会在实例中搜素名为sayHi的属性,在没找到的情况下,会继续搜索原型,
+ * 因为实例与原型之间的连接只不过是一个指针,而非一个副本,因此就可以在原型中找到新的sayHi属性并返回保存在哪里的函数
+ * 
+ * 尽管可以随时为原型添加属性和方法,并且修改能够在所有实例中反映出了,但如果是重写整个原型对象,那情况就不一样了,
+ * 调用构造函数时会为实例添加一个指向最初原型的[[Prototype]] 指针,而把原型修改为另一个对象就等于切断了后走啊函数与最初原型
+ * 之间的联系 请记住,实例中的指针仅指向原型,而不指向构造函数
+ * 如下代码:
+ */
+function Person(){};
+var friend=new Person();
+Person.prototype={
+	constructor:Person,
+	name:"Nicholas",
+	age:29,
+	job:"Software Engineer",
+	sayName:function(){
+		console.log(this.name);
+	}
+}
+friend.sayName();//error
 
+//重写原型对象切断了现有原型与任何之前已经存在的对象实例之间的联系,他们引用的仍然是最初的原型.
 
+/**
+ * 5:原生对象的原型
+ * 通过原生对象的原型,不仅可以取得所有默认方法的引用,而且可以定义新方法,可以像修改自定义对象的原型一样
+ * 修改原生对象的原型,因此可以随时添加方法
+ */
+
+/**
+ * 6:原生对象的问题
+ * 原型模式也不是没有缺点.首先,它省略了为构造函数传递初始化参数的这一环节,结果所有实例在默认情况下
+ * 都将取得相同的属性值,虽然这会在某种程度上带来一些不方便,但还不是原型的最大问题.原型模式的最大问题是
+ * 由其共享的本性所导致的.
+ * 原型中所有属性是被很多实例共享的,这种共享对于函数非常合适,对于那些包含基本值的属性倒也说得过去,
+ * 毕竟通过实例上天机一个同名属性,可以隐藏原型中对应属性,然而对于包含引用类型值的属性来说,问题就比较突出了
+ *如下:
+ */
+function Person(){}
+Person.prototype={
+	constructor:Person,
+	name:"Nicholas",
+	age:29,
+	job:"Software Engineer",
+	friends:["Shelby","Court"],
+	sayName:function(){
+		console.log(this.name);
+	}
+};
+
+var person1=new Person();
+var person2=new Person();
+
+person1.friends.push('Van');
+console.log(person1.friends);
+console.log(person2.friends);
+console.log(person1.firends==person2.friends);
 
 
 

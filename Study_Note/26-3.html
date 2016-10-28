@@ -78,19 +78,81 @@
 			//			console.log(book.year);
 			//			console.log(book._year);
 			//实例六
-			function Person() {};
-			Person.prototype.name = "Nicholas";
-			Person.prototype.age = 29;
-			Person.prototype.job = "Software Engineer";
-			Person.prototype.sayName = function() {
-				console.log(this.name);
-			};
-
-			var person1 = new Person();
-			person1.sayName(); //"Nicholas";
-			var person2 = new Person();
-			person2.sayName(); //"Nicholas";
-			console.log(person1.sayName == person2.sayName); //true
+			//			function Person() {};
+			//			Person.prototype.name = "Nicholas";
+			//			Person.prototype.age = 29;
+			//			Person.prototype.job = "Software Engineer";
+			//			Person.prototype.sayName = function() {
+			//				console.log(this.name);
+			//			};
+			//
+			//			var person1 = new Person();
+			//			person1.sayName(); //"Nicholas";
+			//			var person2 = new Person();
+			//			person2.sayName(); //"Nicholas";
+			//			console.log(person1.sayName == person2.sayName); //true
+			//实例七
+			//			function Person() {};
+			//			Person.prototype.name = "Nicholas";
+			//			Person.prototype.age = 29;
+			//			Person.prototype.job = "Software Engineer";
+			//			Person.prototype.sayName = function() {
+			//				alert(this.name);
+			//			}
+			//			var keys = Object.keys(Person.prototype);
+			//			console.log(keys);
+			//
+			//			var p1 = new Person();
+			//			p1.name = "Rob";
+			//			p1.age = 31;
+			//			var p1keys = Object.keys(p1);
+			//			console.log(p1keys);
+			//			var keys=Object.getOwnPropertyNames(Person.prototype);
+			//			console.log(keys);
+			//实例八
+			//			function Person() {}
+			//			Person.prototype = {
+			//				constructor: Person,
+			//				name: "Nicholas",
+			//				age: 29,
+			//				job: "Software Engineer",
+			//				friends: ["Shelby", "Court"],
+			//				sayName: function() {
+			//					console.log(this.name);
+			//				}
+			//			};
+			//
+			//			var person1 = new Person();
+			//			var person2 = new Person();
+			//
+			//			person1.friends.push('Van');
+			//			console.log(person1.friends);
+			//			console.log(person2.friends);
+			//			console.log(person1.friends === person2.friends);
+			//实例九
+			//			function Person(){};
+			//			var friend=new Person();
+			//			Person.prototype={
+			//				constructor:Person,
+			//				name:"Nicholas",
+			//				age:29,
+			//				job:"Software Engineer",
+			//				sayName:function(){
+			//					console.log(this.name);
+			//				}
+			//			}
+			//			friend.sayName();
+			//实例十
+			//			function Person(){};
+			//			var friend = new Person();
+			//			Person.prototype.sayHi = function() {
+			//				alert("hi");
+			//			}
+			//			friend.sayHi(); 
+			function q(a,a){
+				console.log(a);
+			}
+			q(1,2);
 		</script>
 	</body>
 
