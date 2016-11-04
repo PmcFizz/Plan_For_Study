@@ -404,6 +404,96 @@ console.log(person1.friends);
 console.log(person2.friends);
 console.log(person1.firends==person2.friends);
 
+/**
+ * 在此,Person.prototype 对象有一个名为friends的属性,该属性包含一个字符串数组,然后创建了
+ * Person 的二个实例,接着person1.friends 引用的数组,向数组中添加一个字符串.由于friends数组存在于
+ * Person.prototype 而非person1中,所以刚刚提到的修改也会通过person2.friends反映出了,
+ * 一般情况下,实例都是要有属于自己的全部属性,这就是很少有人单独使用原型模式的原因所在
+*/
+
+/**
+ * 6.2.4组合使用构造函数模式和原型模式
+ * 创建自定义类型的常见方式,就是组合使用构造函数和原型模式,构造函数模式用于定义实例属性,而原型模式用于定义
+ * 方法和共享的属性.结果,每个实例都会有自己的一份实例属性的副本,但同时又共享着对方法的引用,最大限度的节省了内存
+ * 另外,这种混合模式还支持向构造函数传递参数,
+ */
+
+function Person(name,age,job){
+	this.name=name;
+	this.age=age;
+	this.job=job;
+	this.friends=["Shelby","Court"];
+}
+Person.prototype={
+	constructor:Person,
+	sayName:function(){
+		alert(this.name);
+	}
+}
+
+var person1=new Person("Nicholas",29,"Software Engineer");
+var person2=new Person("Greg",27,"Doctor");
+
+person1.friends.push("Van");
+alert(person1.friends);
+alert(person2.friends);
+alert(person1.friends===person2.friends);
+alert(person.sayName===person2.sayName);
+
+/**
+ * 上面这个例子,实例属性都是构造函数中定义的,而由所有实例共享的属性,constructor和方法sayName()
+ * 则是在原型中定义的.而修改了person1.friends(向其中添加一个新字符),并不影响到person2.friends
+ * 因为他们分别引用了不同的数组
+ * 这种构造函数与原型混成的模式,是目前在ECMAScript中使用最广泛,认同度最高的一种创建自定义类型的方法
+ * 可以说,这是用来定义引用类型的一种默认模式.
+ */
+
+/**
+ * 6.2.5动态原型模式
+ * 有其它OO语言经验的开发人员子啊可以看到独立构造函数和原型时,很可能够感到非常困惑.
+ * 动态原型模式正是致力于解决这一问题的一个解决方案.他把所有信息都封装在构造中,而通过在构造函数中
+ * 初始化原型(仅在必要的情况下),又保持了同时使用构造函数很原型的有点,换句话说,可以通过检查某个应该存在
+ * 的方法是否有效,来决定是否需要初始化原型.请看下面这个例子
+ */
+
+function Person(name,age,job){
+	//属性
+	this.name=name;
+	this.age=age;
+	this.job=job;
+	//方法
+	if(typeof this.sayName!="function"){
+		Person.prototype.sayName=function(){
+			alert(this.name);
+		};
+	}
+}
+
+var friend=new Person("Nicholas",29,"Software Engineer");
+friend.sayName();
+/**
+ * 注意上面的例子,不能使用对象字面量来重写原型,会切断现有实例与新原型之间的联系.
+ */
+
+
+/**
+ * 寄生构造函数模式
+ * 这种模式的基本思想是创建一个函数,该函数的作用仅仅是封装创建对象的代码,然后返回新建的对象,
+ * 但从便面看又很想典型的构造函数如下:
+ */
+function Person(name,age,job){
+	var o=new Object();
+	o.name=name;
+	o.age=age;
+	o.job=job;
+	o.sayName=function(){
+		alert(this.name);
+	};
+	return o;
+}
+
+var friend=new Person("Nicholas" 29 ,"Software Engineer");
+friend.sayName(); //"Nicholas";
 
 
 
