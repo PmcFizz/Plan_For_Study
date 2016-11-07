@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人工作能力评估</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.min.css" />
+		<style>
+			.lead {
+			    margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="panel">
+			<div class="panel-heading">
+				<h1>工作能力评估表</h1>
+				<p class="lead">PAW:The power assess of worker.</p>
+				<p class="lead">权重:范围1-5;5表示此项技能在工作中非常重要,对个人要求最高,3为完成需求即可</p>
+				<p class="lead">分数:范围1-10;10分表示此项技能在工作中表现最好,6为勉强满足工作需求.</p>
+				<p class="lead">计算:假设有n项考核技能,那么工作能力PAW的分值与权重w,分数g的关系可以简单表示为PAW= ∑(wn/∑wn*gn)</p>
+				<p><img src="paw.png"/></p>
+			</div>
+			<div class="panel-body">
+				<table class="table table-bordered table-hover definewidth m10 dataTables-example" width="100%" id="skilAssessmentTable">
+					<thead>
+						<tr>
+							<th width="20%;">技能</th>
+							<th width="20%">技能代码</th>
+							<th width="20%">技能描述</th>
+							<th width="10%;">权重</th>
+							<th width="10%;">分数</th>
+							<th width="20%;">操作</th>
+						</tr>
+					</thead>
+					<tbody id="datatbody">
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="jquery.js"></script>
+		<script src="index.js"></script>
+	</body>
+
+</html>
