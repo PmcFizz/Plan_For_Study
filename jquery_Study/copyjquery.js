@@ -314,6 +314,97 @@
  	});
  	//line 512
 
+ 	if(typeof Symbol ==="function"){
+ 		jQuery.fn[Symbol.iterator]=arr[Symbol.iterator];
+ 	}
+ 	jQuery.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(""),
+ 	function(i,name){
+ 		class2type["[object"+name+"]"]=name.toLowerCase();
+ 	});
+
+ 	function isArrayLike(obj){
+ 		var length=!!obj && "length" in obj && obj.length,
+ 			type =jQuery.type(obj);
+ 			if(type ==="function" ||jQuery.isWindow(obj)){
+ 				return false;
+ 			}
+
+ 			return type ==="array" ||length===0||
+ 				typeof length ==="number" && length >0&&(length-1) in obj;
+ 	}
+
+ 	var Sizzle=
+
+ 	(function(window){
+
+ 		var i,
+ 			support,
+ 			Expr,
+ 			getText,
+ 			isXML,
+ 			tokenize,
+ 			compile,
+ 			select,
+ 			outermostContext,
+ 			sortInput,
+ 			hasDuplicate,
+
+ 			setDocument,
+ 			document,
+ 			docElem,
+ 			documentIsHTML,
+ 			rbuggyQSA,
+ 			rbuggyMatches,
+ 			matches,
+ 			contains,
+
+ 			expando="sizzle"+1*new Date(),
+ 			preferredDoc=window.document,
+ 			dirruns=0,
+ 			done=0,
+ 			classCache=createCache(),
+ 			tokenCache=createCache(),
+ 			compilerCache=createCache(),
+ 			sortOrder=function(a,b){
+ 				if(a===b){
+ 					hasDuplicate=true,
+ 				}
+ 				return 0;
+ 			},
+ 			MAX_NEGATIVE=1<<31,
+ 			hasOwn=({}).hasOwnProperty,
+ 			arr=[],
+ 			pop=arr.pop,
+ 			push_native=arr.push,
+ 			push=arr.push,
+ 			slice=arr.slice,
+ 			indexOf=function(list,elem){
+ 				var i=0,
+ 					len=list.length;
+ 				for(;i<len;i++){
+ 					if(list[i]===elem){
+ 						return i;
+ 					}
+ 				}
+ 				return -1;
+ 			},
+
+ 			booleans="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|mutiple|open|readonly|required|scoped",
+
+ 			whitespace="[\\x20\\t\\r\\n\\f]",
+ 			identifier="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
+ 			attributes="\\["+whitespace+"*("+identifier+")(?:"+whitespace+
+ 				"*([*^$|!~]?=)"+whitespace+
+ 				//line 632
+
+
+
+
+
+
+
+ 	})
+
 
 
  }))
