@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>shapes</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/shapes.css">
+</head>
+	<body>
+		<div id="square"></div>
+		<div id="rectangle"></div>
+		<div id="circle"></div>
+		<div id="oval"></div>
+		<div id="triangle-up"></div>
+		<div id="triangle-down"></div>
+		<div id="triangle-left"></div>
+		<div id="triangle-right"></div>
+		<div id="triangle-topleft"></div>
+		<div id="triangle-topright"></div>
+		<div id="triangle-bottomleft"></div>
+		<div id="triangle-bottomright"></div>
+		<div id="curvedarrow"></div>
+		<div id="trapezoid"></div>
+		<div id="parallelogram"></div>
+		<div id="star-six"></div>
+		<div id="start-fix"></div>
+		<div id="pentagon"></div>
+		<div id="hexagon"></div>
+		<div id="octagon"></div>
+		<div id="heart"></div>
+		<div id="infinity"></div>
+		<div id="diamond"></div>
+		<div id="egg"></div>
+		<div id="pacman"></div>
+		<div id="talkbubble"></div>
+		<div id="yin-yang"></div>
+		<div id="badge-ribbon"></div>
+		<div id="space-invader"></div>
+		<div id="tv"></div>
+		<div id="chevron"></div>
+		<div id="magnifying-glass"></div>
+		<div id="facebook-icon"></div>
+		<div id="cone"></div>
+		<div id="moon"></div>
+		<div id="cross"></div>
+	<script type="text/javascript" src="http://localhost/jquery.js"></script>
+	<script type="text/javascript">
+		var divArr=$("div");
+		var i=0,len=divArr.length;
+		var stringArr=[];
+		for(;i<len;i++){
+			var itemId=$(divArr[i]).attr("id");
+			stringArr.push('#'+itemId+"{}\n");
+		}
+		console.log(stringArr.join(''));
+	</script>
+	</body>
+</html>
