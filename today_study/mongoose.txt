@@ -14,7 +14,11 @@ Tank.create({ size: 'small' }, function (err, small) {
 
 查询
 Tank.find({ size: 'small' }).where('createdDate').gt(oneYearAgo).exec(callback);
+Poetry.find({},null,{limit:10},function (err,data) {
+     res.json({data:data})
+})
 
+Kitten.find({ name: /^Fluff/ }, callback)
 
 删除
 Tank.remove({ size: 'large' }, function (err) {
