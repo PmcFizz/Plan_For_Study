@@ -7,27 +7,32 @@ function ajax(config) {
   if(config.methods === 'POST') {
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   }
+  if(config.methods === 'GET') {
+    // for config.data
+  }
   xhr.send()
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       config.successCb(xhr.responseText)
     } else {
-      console.log('xhr error', xhr.responseText)
+      // console.log('xhr error', xhr.responseText)
     }
   }
 }
 
-let sendData = {
-  url: 'http://115.159.52.223:3000/base/getPorjectInfo',
-  methods: 'GET',
-  data: {
-    as: 12
-  },
-  successCb: function (res) {
-    console.log(res)
-  }
+// 请求诗数据
+function loadPoetry () {
+  let sendData = {
+    url: 'http://115.159.52.223:3000/base/getPorjectInfo',
+    methods: 'GET',
+    successCb: function (res) {
+      console.log(res)
+    }
+   }
+   ajax(sendData)
 }
-ajax(sendData)
 
-console.log(11111)
-document.getElementById('poetry-title').innerText = '1111111111'
+loadPoetry()
+
+// console.log(11111)
+// document.getElementById('poetry-title').innerText = '1111111111'
