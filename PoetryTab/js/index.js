@@ -2,16 +2,18 @@
 
 // 封装一个chrome专用ajax
 function ajax(config) {
-  const xhr = new XMLHttpRequest()
-  xhr.open(config.methods, config.url, config.data)
-  if(config.methods === 'POST') {
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  let xhr = new XMLHttpRequest()
+  xhr.open(config.methods, config.url)
+  if (config.methods === 'POST') {
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   }
-  if(config.methods === 'GET') {
+  if (config.methods === 'GET') {
+    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
     // for config.data
   }
   xhr.send()
   xhr.onreadystatechange = function () {
+    console.log(xhr.responseText)
     if (xhr.readyState === 4 && xhr.status === 200) {
       config.successCb(xhr.responseText)
     } else {
@@ -21,18 +23,21 @@ function ajax(config) {
 }
 
 // 请求诗数据
-function loadPoetry () {
+function loadPoetry() {
   let sendData = {
-    url: 'http://115.159.52.223:3000/base/getPorjectInfo',
+    url: 'http://localhost:3000/poetry/getOnePoetry',
     methods: 'GET',
     successCb: function (res) {
-      console.log(res)
+      let poetryData = JSON.parse(res).data
+      document.querySelector("#poetry-title").innerText = poetryData.title
+      let contentHtml = []
+      for (let i = 0; i < poetryData.content.length; i++) {
+        let item = poetryData.content[i]
+        contentHtml.push(`<p class="poetry-content">${item}</p>`)
+      }
+      document.querySelector("#poetry-content-wrap").innerHTML = contentHtml.join('')
     }
-   }
-   ajax(sendData)
+  }
+  ajax(sendData)
 }
-
 loadPoetry()
-
-// console.log(11111)
-// document.getElementById('poetry-title').innerText = '1111111111'

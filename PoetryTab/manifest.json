@@ -5,9 +5,9 @@
   "description": "PoetryTab:为你的浏览增加诗意",
   "author": "Fizz",
   "icons": {
-    "16": "img/cadillac.png",
-    "48": "img/cadillac.png",
-    "128": "img/cadillac.png"
+    "16": "img/logo.png",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
   },
   "chrome_url_overrides": {
     "newtab": "PoetryTab.html"
