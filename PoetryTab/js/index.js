@@ -25,7 +25,7 @@ function ajax(config) {
 // 请求诗数据
 function loadPoetry() {
   let sendData = {
-    url: 'http://localhost:3000/poetry/getOnePoetry',
+    url: 'http://115.159.52.223:3000/poetry/getOnePoetry',
     methods: 'GET',
     successCb: function (res) {
       let poetryData = JSON.parse(res).data
