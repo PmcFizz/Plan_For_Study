@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "PoetryTab",
-  "version": "1.0",
+  "version": "2.0",
   "description": "PoetryTab:为你的浏览增加诗意",
   "author": "Fizz",
   "icons": {
